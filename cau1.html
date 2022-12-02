@@ -6,9 +6,24 @@
 </head>
 <body>
 <script>
-    let str1 = [1,2,5,7,9,6];
-    let str2 = [1,2];
-   str1.search(str2)
+    function find3rd(arr) {
+        for (let i = 0; i < arr.length-1; i++) {
+            for(let j = i+1; j < arr.length; j++) {
+                if(arr[i] > arr[j]) {
+                    let tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        for (let k = 0; k < arr.length; k++) {
+         document.write(arr[k] + ',')
+        }
+        document.write('<br>');
+        document.write('Điểm thi cao thứ 3: ' + arr[arr.length - 3]);
+    }
+    let arr1 = [8, 30, 25, 15, 40, 45];
+    find3rd(arr1);
 </script>
 </body>
 </html>
